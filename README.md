@@ -52,7 +52,7 @@ By default it uses a "windows.ico" icon located in the server folder, however yo
 
 The executable has been tested on virusTotal with a result of 5/62
 
-![flags.png](https://github.com/harol1997/backdoor/tree/main/img/virustotal.png)
+![virustotal.png](https://github.com/harol1997/backdoor/blob/main/img/virustotal.png)
 
 Existe un archivo clientSetting.json en la carpeta "cliente", este archivo se genera automáticamente al usar el comando "generate app", sin embargo puede crearlo manualmente si desea ejecutar "run.py" desde la carpeta "cliente", ya que por defecto el servidor que intetaran conectarse es a:
 
