@@ -12,7 +12,7 @@ For this I assume that you know how to use python at least at a basic level.
 
 Run "main.py" and install the dependencies listed in "requirements.txt" and a menu like the following will appear:
 
-![alt text](https://github.com/harol1997/backdoor/blob/main/img/commands.png)
+![alt text](https://github.com/harol1997/backdoor/blob/main/img/menu.png)
 
 1. Index number 1 is about the license of the program. It is worth
 
