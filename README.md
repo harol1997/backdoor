@@ -15,10 +15,15 @@ Run "main.py" and install the dependencies listed in "requirements.txt" and a me
 ![alt text](https://github.com/harol1997/backdoor/tree/main/img/menu.png)
 
 1. Index number 1 is about the license of the program. It is worth
+
 2. mentioning that this project is free so you can edit it.
+
 3. Index number 2 is the README.md
+
 4. Index number 3 starts the server as a terminal
+
 5. Index number 4 shows the commands and flags that can be used on the server.
+
 6. Index number 5 ends the program.
 
 
