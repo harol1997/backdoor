@@ -1,0 +1,6 @@
+{
+    "title": "backdoor",
+    "host": "localhost",
+    "port": 9999,
+    "name_app_client":"windows"
+}
