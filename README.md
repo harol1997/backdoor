@@ -26,9 +26,9 @@ Run "main.py" and install the dependencies listed in "requirements.txt" and a me
 
 Below is a table of the commands and flags that can be used on the server.
 
-![commands.png](img/commands.png)
+![commands.png](https://github.com/harol1997/backdoor/img/commands.png)
 
-![flags.png](img/flags.png)
+![flags.png](https://github.com/harol1997/backdoor/img/flags.png)
 
 
 This tool is made for educational purposes.
@@ -47,7 +47,7 @@ By default it uses a "windows.ico" icon located in the server folder, however yo
 
 The executable has been tested on virusTotal with a result of 5/62
 
-![flags.png](img/virustotal.png)
+![flags.png](https://github.com/harol1997/backdoor/img/virustotal.png)
 
 Existe un archivo clientSetting.json en la carpeta "cliente", este archivo se genera automáticamente al usar el comando "generate app", sin embargo puede crearlo manualmente si desea ejecutar "run.py" desde la carpeta "cliente", ya que por defecto el servidor que intetaran conectarse es a:
 
