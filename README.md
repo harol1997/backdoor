@@ -14,17 +14,15 @@ Run "main.py" and install the dependencies listed in "requirements.txt" and a me
 
 ![alt text](https://github.com/harol1997/backdoor/blob/main/img/menu.png)
 
-1. Index number 1 is about the license of the program. It is worth
+1. Index number 1 is about the license of the program. It is worth mentioning that this project is free so you can edit it.
 
-2. mentioning that this project is free so you can edit it.
+2. Index number 2 is the README.md
 
-3. Index number 2 is the README.md
+3. Index number 3 starts the server as a terminal
 
-4. Index number 3 starts the server as a terminal
+4. Index number 4 shows the commands and flags that can be used on the server.
 
-5. Index number 4 shows the commands and flags that can be used on the server.
-
-6. Index number 5 ends the program.
+5. Index number 5 ends the program.
 
 
 ## How do I use the server?
@@ -46,7 +44,7 @@ If you want to generate an executable file for the client, then you need to ente
 
     If you want a different name
 
-        generate app --name archivo
+        generate app --name namefile
 
 By default it uses a "windows.ico" icon located in the server folder, however you can replace this file with another image but with the same name and the result will take that icon
 

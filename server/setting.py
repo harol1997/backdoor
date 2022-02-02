@@ -2,7 +2,7 @@ from json import load
 from pathlib import Path
 from typing import Dict, Union
 
-setting:Dict[str, Union[str, int, Path]] = dict
+setting:Dict[str, Union[str, int, Path]] = dict()
 
 with open("setting.json", "rb") as f:
     setting = load(f)

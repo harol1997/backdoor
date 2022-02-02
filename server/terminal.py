@@ -18,7 +18,7 @@ class Terminal:
     def run(self):
         system("cls")
         tprint("backdoor"+"\n")
-        print(">> Server has benn initilized. Input help to info")
+        print(f">> Server has been initilized in port:{setting['port']}. Input help to info")
         print()
         while self.__running:
             task = input(">> ").lower().strip()
