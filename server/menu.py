@@ -1,14 +1,14 @@
 from info import INFO_LICENSE, INFO
 from os import system
 from art import tprint
-from setting import setting
 from terminal import Terminal
 from commands import get_commands_as_table
+import tkinter
 
 
 class Menu:
 
-    MENU = """1. License.\n2. About it. it\n3. Start server.\n4. View Commands.\n5. Exit"""
+    MENU = """1. License.\n2. About it.\n3. Start server.\n4. View Commands.\n5. Exit"""
 
     def __init__(self) -> None:
         self.__menu_action = {

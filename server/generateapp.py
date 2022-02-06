@@ -23,7 +23,7 @@ def generateapp(name):
             print(" Must be a valid Port\n")
 
     with open("clientSetting.json", "w") as f:
-        dump(dict(host=host, port=port, namefile=name),f)
+        dump(dict(host=host, port=port, namefile=name+".exe"),f)
 
     print()
     print(f"{setting['path_client'].joinpath('main.py').absolute().as_posix()}")

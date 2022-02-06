@@ -54,7 +54,7 @@ class Terminal:
                         print(get_flags_as_table())
                 elif task == "generate app":
                     name = flags.get("name", setting["name_app_client"])
-                    if not name.endswith(".exe"): name += ".exe"
+                    
                     generateapp(name)
                     
                 else:

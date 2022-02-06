@@ -1,7 +1,6 @@
 from winreg import HKEY_LOCAL_MACHINE, KEY_WRITE, REG_SZ, HKEY_CURRENT_USER
 from win32.win32api import RegOpenKeyEx, RegSetValueEx, RegCloseKey, RegDeleteValue
 
-
 SUBKEY = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run"
 SUBKEY_64 = "SOFTWARE\\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Run"
 

@@ -1,4 +1,3 @@
-from textwrap import wrap
 from connection import Connector
 from host import Host
 from threading import Thread
@@ -23,6 +22,7 @@ class Server:
         self.__connector.bind((host, port))
         self.__connector.listen()  # enable connections
         self.__hosts:List[Host] = []
+        self.__id_auto_increment = 1  # to assign id to host
         
 
     @property
@@ -56,7 +56,8 @@ class Server:
             try:
                 conn, addr = self.__connector.accept()
                 name = self.__connector.get_str(conn=conn)
-                self.__hosts.append(Host(len(self.__hosts), conn, addr, name))
+                self.__hosts.append(Host(self.__id_auto_increment, conn, addr, name))
+                self.__id_auto_increment += 1
                 
             except Exception as e:
                 if not self.__on:
