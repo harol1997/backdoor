@@ -3,7 +3,7 @@ from os import system
 from art import tprint
 from terminal import Terminal
 from commands import get_commands_as_table
-import tkinter
+from setting import setting
 
 
 class Menu:
@@ -26,7 +26,7 @@ class Menu:
     def execute(self):
         system("cls")
         while self.__running:
-            tprint("backdoor\n")
+            tprint(f"{setting['title']}\n")
             print(self.MENU)
             option = self.execute_menu_item()
             if option != 5:   input("\nPress Enter key to continue...")
