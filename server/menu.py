@@ -29,7 +29,7 @@ class Menu:
             tprint(f"{setting['title']}\n")
             print(self.MENU)
             option = self.execute_menu_item()
-            if option != 5:   input("\nPress Enter key to continue...")
+            input("\n\nPress Enter key to continue...")
             system("cls")
 
     def execute_menu_item(self)->int:

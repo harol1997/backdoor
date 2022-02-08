@@ -64,7 +64,7 @@ class Server:
                 
             except Exception as e:
                 if not self.__on:
-                    print(">> Server has been disconnected")
+                    print("\nServer has been disconnected")
                     break
                 else:
                     print(str(e))
