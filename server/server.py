@@ -13,6 +13,9 @@ def check_connection(method):
         except ConnectionResetError:
             args[0].remove_host(args[1])
             return False, "Error on the host connection"
+        except TimeoutError as e:
+            args[0].remove_host(args[1])
+            return False, str(e)
     return _impl
 
 class Server:

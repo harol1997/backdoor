@@ -1,6 +1,9 @@
 INFO = """
 """
 
+with open("../README.md", "r") as f:
+    INFO = f.read()
+
 INFO_LICENSE = """The MIT License (MIT)
 
 Copyright <2022> <COPYRIGHT HOLDER>
